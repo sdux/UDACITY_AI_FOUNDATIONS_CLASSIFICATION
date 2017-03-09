@@ -2702,7 +2702,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[138]:</div>
+<div class="prompt input_prompt">In&nbsp;[343]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fully_conn</span><span class="p">(</span><span class="n">x_tensor</span><span class="p">,</span> <span class="n">num_outputs</span><span class="p">):</span>
@@ -2713,7 +2713,7 @@ Keep Prob Tests Passed.
 <span class="sd">    : return: A 2-D tensor where the second dimension is num_outputs.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># TODO: Implement Function</span>
-    <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">fully_connected</span><span class="p">(</span><span class="n">x_tensor</span><span class="p">,</span><span class="n">num_outputs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">fully_connected</span><span class="p">(</span><span class="n">x_tensor</span><span class="p">,</span><span class="n">num_outputs</span><span class="p">,</span> <span class="n">activation_fn</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
 
 
 <span class="sd">&quot;&quot;&quot;</span>
@@ -2754,7 +2754,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[139]:</div>
+<div class="prompt input_prompt">In&nbsp;[344]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">output</span><span class="p">(</span><span class="n">x_tensor</span><span class="p">,</span> <span class="n">num_outputs</span><span class="p">):</span>
@@ -2813,7 +2813,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[339]:</div>
+<div class="prompt input_prompt">In&nbsp;[345]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">conv_net</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">keep_prob</span><span class="p">):</span>
@@ -2933,7 +2933,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[335]:</div>
+<div class="prompt input_prompt">In&nbsp;[346]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">train_neural_network</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">keep_probability</span><span class="p">,</span> <span class="n">feature_batch</span><span class="p">,</span> <span class="n">label_batch</span><span class="p">):</span>
@@ -3002,7 +3002,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[336]:</div>
+<div class="prompt input_prompt">In&nbsp;[347]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_stats</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">feature_batch</span><span class="p">,</span> <span class="n">label_batch</span><span class="p">,</span> <span class="n">cost</span><span class="p">,</span> <span class="n">accuracy</span><span class="p">):</span>
@@ -3051,7 +3051,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[340]:</div>
+<div class="prompt input_prompt">In&nbsp;[348]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Tune Parameters</span>
@@ -3077,7 +3077,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[338]:</div>
+<div class="prompt input_prompt">In&nbsp;[349]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -3108,66 +3108,46 @@ Keep Prob Tests Passed.
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Checking the Training on a Single Batch...
-Epoch  1, CIFAR-10 Batch 1:  Loss: 2.2821 Accuracy: 0.1664
-Epoch  2, CIFAR-10 Batch 1:  Loss: 2.07615 Accuracy: 0.2814
-Epoch  3, CIFAR-10 Batch 1:  Loss: 1.96842 Accuracy: 0.2978
-Epoch  4, CIFAR-10 Batch 1:  Loss: 1.81128 Accuracy: 0.4006
-Epoch  5, CIFAR-10 Batch 1:  Loss: 1.70045 Accuracy: 0.4052
-Epoch  6, CIFAR-10 Batch 1:  Loss: 1.59992 Accuracy: 0.4292
-Epoch  7, CIFAR-10 Batch 1:  Loss: 1.55419 Accuracy: 0.4618
-Epoch  8, CIFAR-10 Batch 1:  Loss: 1.46945 Accuracy: 0.4506
-Epoch  9, CIFAR-10 Batch 1:  Loss: 1.39222 Accuracy: 0.467
-Epoch 10, CIFAR-10 Batch 1:  Loss: 1.32697 Accuracy: 0.4732
-Epoch 11, CIFAR-10 Batch 1:  Loss: 1.2878 Accuracy: 0.485
-Epoch 12, CIFAR-10 Batch 1:  Loss: 1.19464 Accuracy: 0.4874
-Epoch 13, CIFAR-10 Batch 1:  Loss: 1.22161 Accuracy: 0.4972
-Epoch 14, CIFAR-10 Batch 1:  Loss: 1.15333 Accuracy: 0.492
-Epoch 15, CIFAR-10 Batch 1:  Loss: 1.09217 Accuracy: 0.5028
-Epoch 16, CIFAR-10 Batch 1:  Loss: 1.07842 Accuracy: 0.507
-Epoch 17, CIFAR-10 Batch 1:  Loss: 1.03697 Accuracy: 0.508
-Epoch 18, CIFAR-10 Batch 1:  Loss: 1.00812 Accuracy: 0.509
-Epoch 19, CIFAR-10 Batch 1:  Loss: 1.00864 Accuracy: 0.5152
-Epoch 20, CIFAR-10 Batch 1:  Loss: 0.987701 Accuracy: 0.517
-Epoch 21, CIFAR-10 Batch 1:  Loss: 0.943272 Accuracy: 0.5182
-Epoch 22, CIFAR-10 Batch 1:  Loss: 0.913387 Accuracy: 0.5282
-Epoch 23, CIFAR-10 Batch 1:  Loss: 0.892329 Accuracy: 0.5306
-Epoch 24, CIFAR-10 Batch 1:  Loss: 0.868993 Accuracy: 0.5248
-Epoch 25, CIFAR-10 Batch 1:  Loss: 0.826078 Accuracy: 0.5306
-Epoch 26, CIFAR-10 Batch 1:  Loss: 0.82109 Accuracy: 0.5316
-Epoch 27, CIFAR-10 Batch 1:  Loss: 0.81896 Accuracy: 0.5424
-Epoch 28, CIFAR-10 Batch 1:  Loss: 0.75253 Accuracy: 0.5452
-Epoch 29, CIFAR-10 Batch 1:  Loss: 0.791501 Accuracy: 0.529
-Epoch 30, CIFAR-10 Batch 1:  Loss: 0.755549 Accuracy: 0.5436
-Epoch 31, CIFAR-10 Batch 1:  Loss: 0.706078 Accuracy: 0.5424
-Epoch 32, CIFAR-10 Batch 1:  Loss: 0.719386 Accuracy: 0.5356
-Epoch 33, CIFAR-10 Batch 1:  Loss: 0.727075 Accuracy: 0.5384
-Epoch 34, CIFAR-10 Batch 1:  Loss: 0.679533 Accuracy: 0.5372
-Epoch 35, CIFAR-10 Batch 1:  Loss: 0.654433 Accuracy: 0.5422
-Epoch 36, CIFAR-10 Batch 1:  Loss: 0.615299 Accuracy: 0.544
-Epoch 37, CIFAR-10 Batch 1:  Loss: 0.628546 Accuracy: 0.546
-Epoch 38, CIFAR-10 Batch 1:  Loss: 0.568612 Accuracy: 0.5464
-Epoch 39, CIFAR-10 Batch 1:  Loss: 0.584731 Accuracy: 0.5486
-Epoch 40, CIFAR-10 Batch 1:  Loss: 0.563272 Accuracy: 0.5482
-Epoch 41, CIFAR-10 Batch 1:  Loss: 0.537845 Accuracy: 0.5426
-Epoch 42, CIFAR-10 Batch 1:  Loss: 0.51082 Accuracy: 0.5534
-Epoch 43, CIFAR-10 Batch 1:  Loss: 0.521917 Accuracy: 0.542
-Epoch 44, CIFAR-10 Batch 1:  Loss: 0.469148 Accuracy: 0.5458
-Epoch 45, CIFAR-10 Batch 1:  Loss: 0.444587 Accuracy: 0.5518
-Epoch 46, CIFAR-10 Batch 1:  Loss: 0.466155 Accuracy: 0.5546
-Epoch 47, CIFAR-10 Batch 1:  Loss: 0.475259 Accuracy: 0.538
-Epoch 48, CIFAR-10 Batch 1:  Loss: 0.40188 Accuracy: 0.551
-Epoch 49, CIFAR-10 Batch 1:  Loss: 0.427709 Accuracy: 0.5486
-Epoch 50, CIFAR-10 Batch 1:  Loss: 0.430776 Accuracy: 0.545
-Epoch 51, CIFAR-10 Batch 1:  Loss: 0.426137 Accuracy: 0.5512
-Epoch 52, CIFAR-10 Batch 1:  Loss: 0.385492 Accuracy: 0.5518
-Epoch 53, CIFAR-10 Batch 1:  Loss: 0.424186 Accuracy: 0.546
-Epoch 54, CIFAR-10 Batch 1:  Loss: 0.365082 Accuracy: 0.5516
-Epoch 55, CIFAR-10 Batch 1:  Loss: 0.407454 Accuracy: 0.556
-Epoch 56, CIFAR-10 Batch 1:  Loss: 0.33358 Accuracy: 0.5506
-Epoch 57, CIFAR-10 Batch 1:  Loss: 0.319075 Accuracy: 0.5462
-Epoch 58, CIFAR-10 Batch 1:  Loss: 0.331935 Accuracy: 0.5506
-Epoch 59, CIFAR-10 Batch 1:  Loss: 0.318102 Accuracy: 0.558
-Epoch 60, CIFAR-10 Batch 1:  Loss: 0.278827 Accuracy: 0.5524
+Epoch  1, CIFAR-10 Batch 1:  Loss: 1.87589 Accuracy: 0.3512
+Epoch  2, CIFAR-10 Batch 1:  Loss: 1.67172 Accuracy: 0.397
+Epoch  3, CIFAR-10 Batch 1:  Loss: 1.53091 Accuracy: 0.445
+Epoch  4, CIFAR-10 Batch 1:  Loss: 1.45864 Accuracy: 0.45
+Epoch  5, CIFAR-10 Batch 1:  Loss: 1.45664 Accuracy: 0.4418
+Epoch  6, CIFAR-10 Batch 1:  Loss: 1.33136 Accuracy: 0.4676
+Epoch  7, CIFAR-10 Batch 1:  Loss: 1.32758 Accuracy: 0.4654
+Epoch  8, CIFAR-10 Batch 1:  Loss: 1.27908 Accuracy: 0.474
+Epoch  9, CIFAR-10 Batch 1:  Loss: 1.23442 Accuracy: 0.4724
+Epoch 10, CIFAR-10 Batch 1:  Loss: 1.20285 Accuracy: 0.4898
+Epoch 11, CIFAR-10 Batch 1:  Loss: 1.14355 Accuracy: 0.4908
+Epoch 12, CIFAR-10 Batch 1:  Loss: 1.06356 Accuracy: 0.4936
+Epoch 13, CIFAR-10 Batch 1:  Loss: 1.13899 Accuracy: 0.4964
+Epoch 14, CIFAR-10 Batch 1:  Loss: 1.11428 Accuracy: 0.5054
+Epoch 15, CIFAR-10 Batch 1:  Loss: 1.10294 Accuracy: 0.5008
+Epoch 16, CIFAR-10 Batch 1:  Loss: 1.07491 Accuracy: 0.5104
+Epoch 17, CIFAR-10 Batch 1:  Loss: 1.03978 Accuracy: 0.5116
+Epoch 18, CIFAR-10 Batch 1:  Loss: 1.02779 Accuracy: 0.5144
+Epoch 19, CIFAR-10 Batch 1:  Loss: 1.05895 Accuracy: 0.5092
+Epoch 20, CIFAR-10 Batch 1:  Loss: 1.04821 Accuracy: 0.5082
+Epoch 21, CIFAR-10 Batch 1:  Loss: 1.05888 Accuracy: 0.5004
+Epoch 22, CIFAR-10 Batch 1:  Loss: 1.00244 Accuracy: 0.53
+Epoch 23, CIFAR-10 Batch 1:  Loss: 0.997619 Accuracy: 0.5144
+Epoch 24, CIFAR-10 Batch 1:  Loss: 1.03468 Accuracy: 0.5154
+Epoch 25, CIFAR-10 Batch 1:  Loss: 0.98804 Accuracy: 0.519
+Epoch 26, CIFAR-10 Batch 1:  Loss: 1.00446 Accuracy: 0.5044
+Epoch 27, CIFAR-10 Batch 1:  Loss: 1.00641 Accuracy: 0.5174
+Epoch 28, CIFAR-10 Batch 1:  Loss: 0.944947 Accuracy: 0.5222
+Epoch 29, CIFAR-10 Batch 1:  Loss: 0.973415 Accuracy: 0.5244
+Epoch 30, CIFAR-10 Batch 1:  Loss: 0.94478 Accuracy: 0.5108
+Epoch 31, CIFAR-10 Batch 1:  Loss: 0.949603 Accuracy: 0.5218
+Epoch 32, CIFAR-10 Batch 1:  Loss: 0.938642 Accuracy: 0.5224
+Epoch 33, CIFAR-10 Batch 1:  Loss: 0.985957 Accuracy: 0.528
+Epoch 34, CIFAR-10 Batch 1:  Loss: 0.920315 Accuracy: 0.5266
+Epoch 35, CIFAR-10 Batch 1:  Loss: 0.931095 Accuracy: 0.512
+Epoch 36, CIFAR-10 Batch 1:  Loss: 0.915763 Accuracy: 0.5216
+Epoch 37, CIFAR-10 Batch 1:  Loss: 0.911791 Accuracy: 0.5202
+Epoch 38, CIFAR-10 Batch 1:  Loss: 0.914103 Accuracy: 0.5366
+Epoch 39, CIFAR-10 Batch 1:  Loss: 0.885745 Accuracy: 0.5272
+Epoch 40, CIFAR-10 Batch 1:  Loss: 0.909978 Accuracy: 0.5332
 </pre>
 </div>
 </div>
